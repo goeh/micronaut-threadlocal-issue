@@ -48,14 +48,14 @@ public class IssueTests {
     @Test
     public void list1() {
         String auth = getAuthorizationHeader("user", "password");
-        List<String> result = getClient().list1(auth).blockingGet();
+        List<Message> result = getClient().list1(auth).blockingGet();
         assertFalse(result.isEmpty());
     }
 
     @Test
     public void list2() {
         String auth = getAuthorizationHeader("user", "password");
-        List<String> result = getClient().list2(auth).blockingGet();
+        List<Message> result = getClient().list2(auth).blockingGet();
         assertFalse(result.isEmpty());
     }
 }

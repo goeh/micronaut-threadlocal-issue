@@ -13,11 +13,11 @@ import java.util.List;
 public interface MyClient {
 
     @Get("/list1")
-    Single<List<String>> list1(@Header(HttpHeaders.AUTHORIZATION) String token);
+    Single<List<Message>> list1(@Header(HttpHeaders.AUTHORIZATION) String token);
 
     @Get("/list2")
-    Single<List<String>> list2(@Header(HttpHeaders.AUTHORIZATION) String token);
+    Single<List<Message>> list2(@Header(HttpHeaders.AUTHORIZATION) String token);
 
     @Get("/details/{name}")
-    Single<String> details(String name);
+    Single<Message> details(String name);
 }

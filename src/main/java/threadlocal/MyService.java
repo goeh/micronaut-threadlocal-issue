@@ -13,7 +13,7 @@ public class MyService {
         this.client = client;
     }
 
-    public Single<String> getDetails(String name) {
+    public Single<Message> getDetails(String name) {
         return client.details(name);
     }
 

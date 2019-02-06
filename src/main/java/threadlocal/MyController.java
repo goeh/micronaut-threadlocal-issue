@@ -25,21 +25,21 @@ public class MyController {
     }
 
     @Get("/list1")
-    public Single<List<String>> list1(Principal principal) {
+    public Single<List<Message>> list1(Principal principal) {
         return Flowable.just("Goran", "Sergio")
                 .flatMapSingle(name -> service.getDetails(name)).toList();
     }
 
     @Get("/list2")
-    public Flowable<String> list2(Principal principal) {
+    public Flowable<Message> list2(Principal principal) {
         return Flowable.just("Goran", "Sergio")
                 .flatMapSingle(name -> service.getDetails(name));
     }
 
     @Get("/details/{name}")
-    public Single<String> details(String name) {
+    public Single<Message> details(String name) {
         log.info("Get details for {}", name);
-        return Single.just("Hello " + name);
+        return Single.just(new Message("Hello " + name));
     }
 
 }
