@@ -1,0 +1,38 @@
+micronaut:
+    application:
+        name: threadlocal
+    multitenancy:
+        propagation:
+            enabled: true
+        tenantwriter:
+            httpheader:
+                enabled: true
+        tenantresolver:
+            httpheader:
+                enabled: true
+    security:
+        enabled: true
+        endpoints:
+            login:
+              enabled: true
+            oauth:
+              enabled: true
+        token:
+            enabled: true
+            jwt:
+                enabled: true
+                bearer:
+                    enabled: true
+                signatures:
+                    secret:
+                        generator:
+                            secret: 182739302827364839283765230962837
+                            jws-algorithm: HS256
+            writer:
+                header:
+                    enabled: true
+                    headerName: "Authorization"
+                    prefix: "Bearer "
+            propagation:
+                enabled: true
+                service-id-regex: ".+"
